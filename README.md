@@ -1,3 +1,17 @@
+# Data Exchange Project
+
+This project brings an enterprise wide solution for Data transport and validation to all CDC centers and divisions.
+
+DEX is comprised of several modules or components in multiple repositories:
+
+* [DEX Upload](https://github.com/CDCgov/data-exchange-upload)
+* [Dex Routing](https://github.com/CDCgov/data-exchange-routing)
+* [DEX HL7 Validation](https://github.com/CDCgov/data-exchange-hl7)
+* [DEX FHIR - add link]()
+* [DEX CSV Validation - add link]()
+
+
+
 # CDCgov GitHub Organization Open Source Project Template
 
 **Template for clearance: This project serves as a template to aid projects in starting up and moving through clearance procedures. To start, create a new repository and implement the required [open practices](open_practices.md), train on and agree to adhere to the organization's [rules of behavior](rules_of_behavior.md), and [send a request through the create repo form](https://forms.office.com/Pages/ResponsePage.aspx?id=aQjnnNtg_USr6NJ2cHf8j44WSiOI6uNOvdWse4I-C2NUNk43NzMwODJTRzA4NFpCUk1RRU83RTFNVi4u) using language from this template as a Guide.**
