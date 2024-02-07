@@ -8,14 +8,14 @@ public object StringHelper {
     * This method helps normalize the names and remove special characters
     */ 
 
-    fun String.normalize(str: String): String {
+    fun String.normalize(): String {
         val replaceableChars = mapOf(" " to "_",
                                      "-" to "_",
                                      "/" to "_",
                                      "." to "_",
                                      "&" to "_and_")
 
-        var rr1 = str.trim().lowercase()
+        var rr1 = this.trim().lowercase()
         replaceableChars.forEach {
             rr1 = rr1.replace(it.key, it.value)
         }
