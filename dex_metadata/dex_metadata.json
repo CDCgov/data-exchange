@@ -1,0 +1,104 @@
+{
+  "$id": "https://api.cdc.gov/ocio/dex/metadata.schema.json",
+  "$schema": "https://api.cdc.gov/ocio/dex/metadata.schema.json",
+  "description": "Data Exchange (DEX) Metadata",
+  "formal_descriptions_doc_link": "https://cdc.sharepoint.com/:w:/r/teams/CDC-Data-Exchange/_layouts/15/Doc.aspx?sourcedoc=%7BB6BE9690-4FB6-4123-8074-CA7520F98302%7D&file=DEX%20Ubiquitous%20Language%20Glossary.docx&action=default&mobileredirect=true",
+  "lucid_diagram_link": "https://lucid.app/lucidchart/8a0a48f6-24b7-4553-bc2e-d031e431e56a/edit?invitationId=inv_3890a184-2af1-45ce-9414-e8048a79c637&page=0_0#",
+  "version": "2.0.0",
+  "type": "object",
+  "required": [
+    "idp_info",
+    "onboarding_metadata",
+    "sender_manifest",
+    "TODO"
+  ],
+  "properties": {
+    "idp_info": {
+      "type": "object",
+      "description": "Provided fields by the identity provider at access.",
+      "required": [
+        "user_account_type",
+        "user_account_id",
+        "user_email"
+      ],
+      "properties": {
+        "user_account_type": {
+          "type": "string",
+          "description": "Specifies type of user person or machine client."
+        },
+        "user_account_id": {
+          "type": "string",
+          "description": "Specifies the user account id."
+        },
+        "user_email": {
+          "type": "string",
+          "description": "Specifies the user email."
+        }
+      }
+    },
+    "onboarding_metadata": {
+      "type": "object",
+      "description": "Metadata captured at onboarding of one Data Stream",
+      "properties": {
+        "TODO": "TODO"
+      }
+    },
+    "sender_manifest": {
+      "description": "json manifest received with every uploaded file sent by sender's tusd client",
+      "required": [
+        "data_stream_id",
+        "data_stream_route",
+        "sender_id",
+        "data_producer_id",
+        "received_filename"
+      ],
+      "optional": [
+        "version",
+        "supporting_metadata",
+        "jurisdiction"
+      ],
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "Specifies the version of the metadata being sent. If present, it should be validated against the version schema. Otherwise version 1.0 will be assumed and sender manifest will be validated using metadata version 1.0 schema",
+          "value_example": "2.0.0"
+        },
+        "data_stream_id": {
+          "type": "string",
+          "description": "Specifies the name of the data stream. This value is determined during onboarding and should match the predefined data stream name(s). For v1 metadata only this field will be translated from destination_id from the metadata 1.0 model.",
+          "value_example": "ndlp"
+        },
+        "data_stream_route": {
+          "type": "string",
+          "description": "Indicates the allowed processing route for the data through DEX as specified by the Program. This value is captured at onboarding and must match DEX allowed processing routes. For v1 metadata only this field will be translated from ext_event/name from metadata 1.0 model.",
+          "value_example": "routineImmunization"
+        },
+        "sender_id": {
+          "type": "string",
+          "description": "Specifies the name of the sender organization. This value is determined during onboarding and should match a registered organization name.",
+          "value_example": "IZ-Gateway"
+        },
+        "data_producer_id": {
+          "type": "string",
+          "description": "Specifies the organization that provides data to the sender. At onboarding sender (or program) to describe if this is available and when available this should be sent validated from allowed values provided at onboarding",
+          "value_example": "ABC Hospital"
+        },
+        "jurisdiction": {
+          "type": "string",
+          "description": "Indicates the geographical area to which the data pertains, such as the state, county, city, tribe, territory, etc. This value is determined during onboarding and is provided by some senders. If present, the value should match the predefined jurisdictions.",
+          "value_example": "BAA"
+        },
+        "received_filename": {
+          "type": "string",
+          "description": "Specifies the name of the file when it was submitted. This value is set by the sender (tusd resumable protocol) client.",
+          "value_example": "filename.txt"
+        },
+        "supporting_metadata": {
+          "type": "object",
+          "description": "Contains custom metadata captured during onboarding. If schema is provided, this data should be validated against the schema. Additional sent fields in the manifest should prompt a warning.",
+          "value_example": {}
+        }
+      }
+    }
+  }
+}
