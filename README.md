@@ -1,39 +1,44 @@
-# Data Exchange Project
+# DEX (Data Exchange) Product Documentation
 
-This project brings an enterprise wide solution for Data transport and validation to all CDC centers and divisions.
+Welcome to the DEX Products Documentation repository! 
 
-DEX is comprised of several modules or components in multiple repositories:
+## Documentation
 
-* [DEX Upload](https://github.com/CDCgov/data-exchange-upload)
-* [Dex Routing](https://github.com/CDCgov/data-exchange-routing)
-* [DEX HL7 Validation](https://github.com/CDCgov/data-exchange-hl7)
-* [DEX FHIR - add link]()
-* [DEX CSV Validation - add link]()
+The documentation for the DEX Products is located in the `docs/` directory of this repository. The documentation is served as a static website via GitHub Pages, allowing for easy access to it online.
+
+### Accessing the Documentation
+
+You can view the DEX products documentation by visiting the following URL:
+
+[https://cdcgov.github.io/data-exchange](https://cdcgov.github.io/data-exchange)
+
+Alternatively, you can navigate to the `docs/` directory in this repository to view the documentation in markdown format.
+
+## Setup for GitHub Pages
+
+This repository is configured to serve the content of the `docs/` directory via GitHub Pages. The following is configured for GitHub Pages:
+
+1. **Go to the repository settings:**
+   - Navigate to the GitHub repository's main page.
+   - Click on the "Settings" tab.
+
+2. **Scroll to the GitHub Pages section:**
+   - Under the "Code and automation" section in the left sidebar, click on "Pages".
+
+3. **Configure the source branch:**
+   - In the "Source" dropdown menu, select the `main` branch.
+   - In the "Folder" dropdown menu, select `/docs`.
+
+4. **Save your changes:**
+   - Click the "Save" button to apply the changes.
+
+The documentation will now be available via GitHub Pages at the URL mentioned above.
 
 
+## Contributing to Documentation
 
-# CDCgov GitHub Organization Open Source Project Template
+Please contribute to improve the documentation under the `/docs` directory. Feel free to submit pull requests or open issues with any suggestions, additions or changes.
 
-**Template for clearance: This project serves as a template to aid projects in starting up and moving through clearance procedures. To start, create a new repository and implement the required [open practices](open_practices.md), train on and agree to adhere to the organization's [rules of behavior](rules_of_behavior.md), and [send a request through the create repo form](https://forms.office.com/Pages/ResponsePage.aspx?id=aQjnnNtg_USr6NJ2cHf8j44WSiOI6uNOvdWse4I-C2NUNk43NzMwODJTRzA4NFpCUk1RRU83RTFNVi4u) using language from this template as a Guide.**
-
-**General disclaimer** This repository was created for use by CDC programs to collaborate on public health related projects in support of the [CDC mission](https://www.cdc.gov/about/organization/mission.htm).  GitHub is not hosted by the CDC, but is a third party website used by CDC and its partners to share information and collaborate on software. CDC use of GitHub does not imply an endorsement of any one particular service, product, or enterprise. 
-
-## Access Request, Repo Creation Request
-
-* [CDC GitHub Open Project Request Form](https://forms.office.com/Pages/ResponsePage.aspx?id=aQjnnNtg_USr6NJ2cHf8j44WSiOI6uNOvdWse4I-C2NUNk43NzMwODJTRzA4NFpCUk1RRU83RTFNVi4u) _[Requires a CDC Office365 login, if you do not have a CDC Office365 please ask a friend who does to submit the request on your behalf. If you're looking for access to the CDCEnt private organization, please use the [GitHub Enterprise Cloud Access Request form](https://forms.office.com/Pages/ResponsePage.aspx?id=aQjnnNtg_USr6NJ2cHf8j44WSiOI6uNOvdWse4I-C2NUQjVJVDlKS1c0SlhQSUxLNVBaOEZCNUczVS4u).]_
-
-## Related documents
-
-* [Open Practices](open_practices.md)
-* [Rules of Behavior](rules_of_behavior.md)
-* [Thanks and Acknowledgements](thanks.md)
-* [Disclaimer](DISCLAIMER.md)
-* [Contribution Notice](CONTRIBUTING.md)
-* [Code of Conduct](code-of-conduct.md)
-
-## Overview
-
-Describe the purpose of your project. Add additional sections as necessary to help collaborators and potential collaborators understand and use your project.
   
 ## Public Domain Standard Notice
 This repository constitutes a work of the United States Government and is not
