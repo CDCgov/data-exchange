@@ -1,0 +1,35 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Ruby specific
+.bundle/
+vendor/
+Gemfile.lock
+
+# Jekyll generated site
+_site/
+.jekyll-cache/
+.sass-cache/
+.jekyll-metadata
+
+# Log and backup files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Bundler config
+.bundle/config
+
+# Coverage reports
+coverage/
+
+# Node specific (if you're using JavaScript tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors (optional, depending on your setup)
+.vscode/
+.idea/
