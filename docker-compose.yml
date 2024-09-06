@@ -1,0 +1,11 @@
+services:
+  web:
+    image: jekyll/jekyll
+    command: jekyll serve --watch --host 0.0.0.0
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./docs:/srv/jekyll
+    working_dir: /srv/jekyll
+    stdin_open: true
+    tty: true

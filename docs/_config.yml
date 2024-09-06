@@ -1,0 +1,11 @@
+# _config.yml
+
+# Site settings
+title: DEX (Data Exchange) Product Documentation
+description: Documentation for DEX products
+
+# Jekyll theme settings
+theme: jekyll-theme-minimal # You can choose from GitHub Pages-supported themes
+
+# Set markdown type kramdown or GFM
+markdown: kramdown
