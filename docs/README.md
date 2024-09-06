@@ -1,3 +1,10 @@
+---
+title:  "DEX (Data Exchange) Product Documentation"
+description: "Welcome to the DEX Products Documentation Site!"
+permalink: "/"
+---
+
+
 # Introduction
 
 ## What Is DEX? 
@@ -38,8 +45,8 @@ The DEX Processing Status API (PS API) was developed to provide visibility into 
 
 To learn more about the DEX PS API and find out how you can use it to fit your development needs, check out the following resources:  
 
-- [DEX PS API Quick Start Guide](./PS-API/quick-start-guide.md)
-- [DEX PS API Complete Product Guide](./PS-API/product-guide.md)  
+- [DEX PS API Quick Start Guide](PS-API/quick-start-guide)
+- [DEX PS API Complete Product Guide](PS-API/product-guide)  
 - [DEX PS API Public GitHub Repository](https://github.com/CDCgov/data-exchange-processing-status)  
 
  
@@ -53,9 +60,9 @@ The DEX Upload API provides a modern and secure platform for Data Senders to upl
 
 To learn more about the DEX Upload API and how it can be customized to fit your needs, check out the following resources:  
 
-- [DEX Upload API Documentation for Existing Customers](./UPLOAD-API/documentation-existing-customers.md)
-- [DEX Upload API Quick Start Guide](./UPLOAD-API/quick-start-guide.md)
-- [DEX Upload API Complete Product Guide](./UPLOAD-API/product-guide)
+- [DEX Upload API Documentation for Existing Customers](UPLOAD-API/documentation-existing-customers)
+- [DEX Upload API Quick Start Guide](UPLOAD-API/quick-start-guide)
+- [DEX Upload API Complete Product Guide](UPLOAD-API/product-guide)
 - [DEX Upload API Public GitHub Repository](https://github.com/CDCgov/data-exchange-upload) 
 
 
