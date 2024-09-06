@@ -39,6 +39,44 @@ The documentation will now be available via GitHub Pages at the URL mentioned ab
 
 Please contribute to improve the documentation under the `/docs` directory. Feel free to submit pull requests or open issues with any suggestions, additions or changes.
 
+
+## Running Documentation Site Locally with Docker Compose
+
+To preview the documentation site locally during development, you can use Docker Compose to build and run the site.
+
+### Prerequisites
+
+- Ensure that you have [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) installed on your machine.
+
+### Steps to Run the Site Locally
+
+1. **Clone the repository:**
+    - Clone the repository using your usual method and checkout your development branch.
+
+2. **Build and run the Docker container:**
+
+    - Run the following command to build and start the Jekyll site inside a Docker container:
+        ```
+        docker-compose up
+        ```
+    - **NOTE:** If having issues with errors related to Gem packages missing or certificate related erorrs, you may need to **temporarily disable Zscaler** on first use and start back after packages are installed.
+
+        This will:
+        - Build the Jekyll site.
+        - Serve the site locally at http://localhost:4000.
+
+
+3. **Monitoring Changes:**
+    - Once the site is running, you can make changes to your files. The site will automatically rebuild and refresh when changes are detected, and the updated version will be visible at http://localhost:4000. Refresh pages in your browser to see your changes!
+
+4. **Stopping the Docker Container:**
+    - When you're done, you can stop the Docker container with:
+    ```
+    docker-compose down
+    ```
+
+By following these steps, you'll be able to run your documentation site locally and monitor any changes at http://localhost:4000.
+
   
 ## Public Domain Standard Notice
 This repository constitutes a work of the United States Government and is not
