@@ -77,7 +77,7 @@ All deployment activities have been sequenced, reviewed, and confirmed by all DE
 
 DEX Upload API offers different endpoints that authenticated users will need during different parts of the file upload process (note: to successfully reach each endpoint below, your url should include upload/ before your chosen endpoint.
 
-### /
+### /upload
 
 You will use this endpoint to upload multiple files over HTTP. Using this endpoint exposes a server that implements the Tus Resumable Upload protocol. You must implement a Tus client to connect in order to communicate in a way that Tus understands. The endpoint uses a combination of POST, PATCH, and OPTION requests to upload files. This endpoint authenticates users via bearer tokens in the Authorization header.
 
@@ -235,20 +235,22 @@ Use the /info endpoint to confirm the status of your file transfer. You’ll see
 
 ## DEX Upload API Metadata Requirements
 
-Metadata plays an important role in how the DEX Upload API organizes, manages, and routes public health data. As an existing user, the DEX Upload API Team has already worked with you to ensure that your program can meet the requirements for submitting your metadata to the CDC. Your Sender Manifest is the approved metadata for your organization. The Sender Manifest accompanies file uploads initiated by senders. Values in the Sender Manifest are validated against expected values provided by the program and by senders during onboarding. The following fields are required for all submissions:
+Metadata plays an important role in how the DEX Upload API organizes, manages, and routes public health data. As an existing user, the DEX Upload API Team has already worked with you to ensure that your program can meet the requirements for submitting your metadata to the CDC. Your Sender Manifest is the approved metadata for your organization. The Sender Manifest accompanies file uploads initiated by senders.  
 
+
+Values in the Sender Manifest are validated against expected values provided by the program and by senders during onboarding. Please review the [Sender Manifest Schema Definition Json](https://github.com/CDCgov/data-exchange-upload/blob/main/upload-configs/sender-manifest.2.0.0.schema.json) as well as the following fields that are required for all submissions:
 
 | **Required Metadata** | | | |
 | Metadata field name | Definition and purpose | Type | How to use this field |
 |-------|-------|-------|-------| 
 | **data_stream_id** (example: celr) | Identifies the CDC program the file should be contained in | String | This value was determined during onboarding |
 | **data_stream_route** (example: hl7v2) | Defines the path that data takes through DEX to arrive at the CDC – this can be the name of the internal folder destination for the data file | String | This value was determined during onboarding |
-| **sender_id** (example: APHL) | Identifies the sender, machine, or intermediary that’s sending data | String | This value was determined during onboarding |
-| **data_producer_id** (example: FL-SPHL) | Identifies the public health authority that supplies the data | String | This value was determined during onboarding (Some data will be sent directly by senders who will not have a data_producer_id – if this is you, enter “null”) |
-| **Jurisdiction** (example: FL) | Defines the city, county, state, tribe, or territory where the data originates | String | This value is decided by you and the DEX Upload API Team during onboarding. (If you don’t track this information, the value is “null”) |
+| **sender_id** (example: APHL) | Identifies the sender, machine, or intermediary that’s sending data | Array | This value was determined during onboarding |
+| **data_producer_id** (example: FL-SPHL) | Identifies the public health authority that supplies the data | Array | This value was determined during onboarding (Some data will be sent directly by senders who will not have a data_producer_id – if this is you, enter “null”) |
+| **Jurisdiction** (example: FL) | Defines the city, county, state, tribe, or territory where the data originates | Array | This value is decided by you and the DEX Upload API Team during onboarding. (If you don’t track this information, the value is “null”) |
 | **received_filename** (example: filename.hl7) | Identifies the name of the file being sent | String | The DEX Team worked with you to create unique markers for your file name during your onboarding process to help organize your data submissions. |
 | **Version** (example: 2.0) | Defines the version of the metadata being sent | String | This value was determined during onboarding |
-| **supporting_metadata** | Metadata specific to your program that you track | String | If you track information for your organization outside the fields above, you can include it under this field |
+| **supporting_metadata** | Metadata specific to your program that you track | String or Array | If you track information for your organization outside the fields above, you can include it under this field |
 
 
 ### Invalid Metadata Characters
@@ -260,24 +262,6 @@ There are characters that should never be used when naming your metadata. Using 
 | / | forward slash |
 
 The DEX Upload API Team can work with you to ensure that your metadata meets our requirements, but you should also review your naming conventions to make sure that you are not using these special characters – especially in your supporting metadata.
-
-### Metadata Changes for Legacy Users
-
-DEX Upload API’s beta testers and legacy users used an earlier version of the metadata model provided above. This model, also known as Version One (V1), looks significantly different than the current model.
-
-If you’re currently using the V1 metadata model, you can continue to send your data using the V1 model. The DEX Upload API Team will work with you to transition your metadata to the new model.
-
-To prepare for this transition, please review the chart below, which outlines the changes and how they impact your metadata:
-
-| **V1 field name(s)** | **V2 field name** |
-|----------------------|-------------------|
-| filename | filename |
-| meta_ext_filename | |
-| original_filename | |
-| meta_destination_id | data_stream_id |
-| meta_ext_event | data_stream_route | 
-
-Other metadata fields that you collect can also be added to the “supporting_metadata” field in the current metadata model.
 
 ## Errors
 
@@ -344,8 +328,8 @@ If you need additional information or have questions, please contact the DEX Upl
 
 | | |
 |-|-|
-| Report an incident: | <span style="text-decoration:underline;">ociouploadapimincidencereporting@cdc.gov</span> |
-| Contact the team: | <span style="text-decoration:underline;">ociocoeuploadapimteam@cdc.gov</span> |
+| Report an incident: | <span style="text-decoration:underline;">dexuploadapi@cdc.gov</span> |
+| Contact the team: | <span style="text-decoration:underline;">dexuploadapi@cdc.gov</span> |
 
 ## Updates, Version & Change History
 
