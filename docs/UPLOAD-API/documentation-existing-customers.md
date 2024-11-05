@@ -270,15 +270,20 @@ The DEX Upload API Team can work with you to ensure that your metadata meets our
 An issue with metadata may result in an error response such as the one shown below:
 
 ```
-TusCommunicationError: pre-create hook failed: exit status 1
-Using schema_version = 1.0
-meta_ext_source = DESTX is not one of the allowed values: ["DEST"]
-meta_ext_entity = ENT2 is not one of the allowed values: ["ENT", "ENT1"]
-Missing required metadata 'meta_ext_required', description = 'Required.'
-Provided metadata: {"filename":"example.jpeg","meta_destination_id":"DESTX","meta_ext_entity":"ENT2","meta_ext_event":"zz","meta_ext_filename":"example.jpeg","meta_ext_objectkey":"f3da1339-5d0f-4111-84e1-e65a4c12b031", "meta_ext_source":"DESTX", "meta_username":"email@email.com"}
+Error: tus: unexpected response while creating upload
+
+"upload_id":"ba2ba966-508c-46e8-b3a9-aa272c7c4162", "validation_errors":
+  ["validation failure","sender_id had disallowed value RI-YYY",
+   "validation failure","data_producer_id had disallowed value RI-ZZZ",
+   "validation failure","field jurisdiction was missing"]
 ```
 
-In this example, the client has failed to provide some metadata that is required for a program/event, and in addition, they provided a metadata value that was not allowed. Responses will vary depending on the Tus client that you decide to use. When your upload is successful, Tus clients that provide status callbacks will indicate the last upload attempt was successful. Others may finish silently, so be sure you choose the client that meets your needs.
+Provided metadata:
+```json
+{ "version": "2.0", "data_stream_id": "ehdi", "data_stream_route": "csv",  "received_filename": "example.csv", "data_producer_id": "RI-ZZZ", "sender_id": "RI-YYY", "meta_ext_objectkey": "test-obj-key", "meta_ext_file_timestamp": "test-timestamp", "meta_ext_uploadid": "test-upload-id", "meta_ext_source": "test-src", "meta_ext_filestatus": "test-file-status" }
+```
+
+In this example, the client has failed to provide some metadata that is required for `jurisdiction`, and in addition, they provided metadata values that were not allowed for `sender_id` and `data_producer_id`. Responses will vary depending on the Tus client that you decide to use. When your upload is successful, Tus clients that provide status callbacks will indicate the last upload attempt was successful. Others may finish silently, so be sure you choose the client that meets your needs.
 
 ### Submission Errors
 
