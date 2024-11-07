@@ -148,9 +148,13 @@ ility.
 PS API is made up of several microservices that, when deployed together, allow for data upload visibility, report generation, and personalized notifications.   
    
 [**GraphQL**](https://github.com/CDCgov/data-exchange-processing-status/tree/develop/pstatus-graphql-ktor): a microservice that can be built as a docker container image to provide reports, dead letter reports, and notifications   
+
 [**Notifications**](https://github.com/CDCgov/data-exchange-processing-status/tree/develop/pstatus-notifications-rules-engine-ktor): a microservice that can be configured to provide customized analytical products through the dynamic business rules engine   
+
 [**Notifications Workflow**](https://github.com/CDCgov/data-exchange-processing-status/tree/develop/pstatus-notifications-workflow-ktor): a workflow orchestration microservice for processing and evaluating the active notification rules using Temporal as its workflow engine 
+
 [**Report-Sink**](https://github.com/CDCgov/data-exchange-processing-status/tree/develop/pstatus-report-sink-ktor): a microservice that listens for messages on Azure Service Bus queues and topics or RabbitMQ queues (for local runs), validates the messages, and persists them to Cosmos DB 
+
 [**Event-Reader-Sink**](https://github.com/CDCgov/data-exchange-processing-status/tree/develop/event-reader-sink): a microservice using Apache Camel to handle message ingestion from different cloud messaging systems and store the messages in the respective storage solutions   
  
 
@@ -959,7 +963,8 @@ Verify that the specified Azure resources exist, have respective environment con
 ##### Issue: 
 
 The Azure Service Bus connection could not be established due to an invalid service bus environment config value.   
-<img src="../assets/images/ps-api-prod-guide/image38.png" alt="image38">
+
+<img src="../assets/images/ps-api-prod-guide/image37.png" alt="image37">
 
 ##### Solution: 
 
