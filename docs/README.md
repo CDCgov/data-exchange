@@ -45,7 +45,7 @@ The DEX Processing Status API (PS API) was developed to provide visibility into 
 
 To learn more about the DEX PS API and find out how you can use it to fit your development needs, check out the following resources:  
 
-- [DEX PS API Quick Start Guide](PS-API/quick-start-guide)
+- [DEX PS API Quick Start Guide](https://github.com/CDCgov/data-exchange-processing-status#quick-start)
 - [DEX PS API Complete Product Guide](PS-API/product-guide)  
 - [DEX PS API Public GitHub Repository](https://github.com/CDCgov/data-exchange-processing-status)  
 
