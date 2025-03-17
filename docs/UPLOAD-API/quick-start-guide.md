@@ -26,7 +26,7 @@ The DEX Upload API is built on[ Tus](https://tus.io/). Tus provides a way to upl
 
 ### Endpoint Documentation
 
-You can explore all of [Upload API endpoint information](http://data-exchange-upload/docs%20at%20main%20%C2%B7%20CDCgov/data-exchange-upload%20(github.com)) via the SwaggerUI in our repository.
+You can explore all of [Upload API endpoint information](https://cdcgov.github.io/data-exchange-upload/) via the SwaggerUI in our repository.
 
 ## Getting Started
 
