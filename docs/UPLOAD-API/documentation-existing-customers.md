@@ -59,7 +59,7 @@ To learn more about the product and view code examples, you can visit the follow
 
 ### Helpful Tus and DEX Upload API Information
 
-[DEX OpenAPI (Swagger) specification](https://cdcgov.github.io/data-exchange-api-examples/)
+[DEX OpenAPI (Swagger) specification](https://cdcgov.github.io/data-exchange-upload/)
 
 ## DEX Upload API Environments
 
